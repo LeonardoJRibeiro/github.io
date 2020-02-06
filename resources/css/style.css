@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+.folder{
+    width: 100%;
+    height: 100vh;
+    background: #dddddd;
+}
+.folder-card{
+    display: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    align-content: center;
+    justify-content: space-around;
+    opacity: 0.9;
+}
+.title-text{
+    font-size: 70;
+    font-weight: 700;
+}
+.name-text{
+    font-size: 40;
+}
+.universidade-text{
+    color: #00226b;
+    font-size: 35;
+}
+.campus-text{
+    color: #00226b;
+    font-size: 30;
+}
+.link-text{
+    color: #000000;
+    font-size: 25px;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+.link-text:hover{
+    color: #00226b;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+body{
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialised;
+}
