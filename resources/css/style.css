@@ -1,45 +1,82 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*, body{
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialised;
+}
 .folder{
-    width: 100%;
+    width: 100wh;
     height: 100vh;
-    background: #dddddd;
+    background: #ccccdd;
 }
 .folder-card{
-    display: none;
     border-radius: 5px;
     background-color: #ffffff;
     align-content: center;
     justify-content: space-around;
-    opacity: 0.9;
+    opacity: 0.8;
 }
-.title-text{
-    font-size: 70;
-    font-weight: 700;
-}
-.name-text{
-    font-size: 40;
-}
-.universidade-text{
-    color: #00226b;
-    font-size: 35;
-}
-.campus-text{
-    color: #00226b;
-    font-size: 30;
-}
-.link-text{
-    color: #000000;
-    font-size: 25px;
-    text-decoration: none;
-    transition: color 0.5s;
-}
-.link-text:hover{
-    color: #00226b;
-    font-size: 25px;
+.link-undecorated{
     text-decoration: none;
 }
-
-body{
-    font-family: Roboto, sans-serif;
-    -webkit-font-smoothing: antialised;
+.link-undecorated:hover{
+    text-decoration: none;
+}
+@media screen and (max-width: 767px){
+    .title-text{
+        font-size: 40px;
+        font-weight: 700;
+        color: #000000;
+    }
+    .name-text{
+        font-size: 35px;
+        color: #000000;
+    }
+    .universidade-text{ 
+        font-size: 25px;
+        color: #000000;
+    }
+    .campus-text{
+        font-size: 25px;
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    .link-text{
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    .link-text:hover, .campus-text:hover{
+        color: #00226b;
+    }
+}
+@media screen and (min-width: 768px){
+    .title-text{
+        font-size: 70px;
+        font-weight: 800;
+    }
+    .name-text{
+        font-size: 50px;
+        color: #000000;
+    }
+    .universidade-text{
+        font-size: 40px;
+        color: #000000;
+    }
+    .campus-text{
+        font-size: 40px;
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    .link-text{
+        font-size: 25px;
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.5s;
+    }
+    .link-text:hover, .campus-text:hover{
+        color: #00226b;
+    }
 }
