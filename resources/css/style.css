@@ -36,15 +36,15 @@
         color: #000000;
     }
     .name-text{
-        font-size: 35px;
+        font-size: 25px;
         color: #000000;
     }
     .universidade-text{ 
-        font-size: 25px;
+        font-size: 20px;
         color: #000000;
     }
     .campus-text{
-        font-size: 25px;
+        font-size: 20px;
         color: #000000;
         text-decoration: none;
         transition: color 0.5s;
