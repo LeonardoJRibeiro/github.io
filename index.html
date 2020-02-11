@@ -3,6 +3,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="shortcut icon" href="fav.png">
         <title>Leonardo Jardim Ribeiro</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="resources/css/style.css">
     </head>
@@ -34,7 +35,34 @@
                         <a class="link-undecorated" href="https://github.com/LeonardoJRibeiro" target="blank"><div class="link-text">Perfil no Github</div></a>
                     </div>
                 </div>
+                <div class="d-flex">
+                    <div class="mx-auto">
+                        <a class="link-undecorated scrollTo" href="#info">
+                            <i class="material-icons btn-folder link-undecorated">keyboard_arrow_down</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="folder"></div>
+        <div id="info" class="d-flex folder">
+            <div class="mx-auto my-auto p-4 shadow-lg folder-card">
+                <div class="d-flex">
+                    <div class="mx-auto">
+                        <div class="title-text">Mais informações em breve!</div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
-</html>
+    <script type="text/javascript" src="resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="resources/js/jquery.scrollTo.min.js"></script>
+    <script type="text/javascript">
+        $("document").ready(function(){
+            $(".scrollTo").click(function(){
+                var target = this.hash;
+		        $('body').scrollTo(target, 500);
+            })
+        })
+    </script>
+</html
