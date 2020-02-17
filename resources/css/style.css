@@ -4,11 +4,16 @@
     font-weight: 800;
 }
 
+.icon-default{
+    font-size: 24px;
+    font-weight: normal;
+}
+
 *, body{
     font-family: 'Raleway', sans-serif;
     -webkit-font-smoothing: antialised;
 }
-.folder{
+.total-screen{
     width: 100wh;
     height: 100vh;
 }
@@ -29,6 +34,13 @@
     color: #00226b;
 }
 
+.link-text-transform:hover{
+    transition: 1s;
+    transition: ease-in-out;
+    transition-duration: 0.4s;
+    transform: scale(1.1,1.1);
+}
+
 @media screen and (max-width: 767px){
     .title-text{
         font-size: 40px;
@@ -45,17 +57,17 @@
     .campus-text{
         color: #000000;
         text-decoration: none;
-        transition: color 0.5s;
+        transition: color 1s;
     }
     .link-text{
         color: #000000;
         text-decoration: none;
-        transition: color 0.5s;
+        transition: color 1s;
     }
 }
 @media screen and (min-width: 768px){
     .title-text{
-        font-size: 70px;
+        font-size: 80px;
         font-weight: 800;
     }
     .name-text{
@@ -70,12 +82,20 @@
         font-size: 40px;
         color: #000000;
         text-decoration: none;
-        transition: color 0.5s;
+        transition: color 1s;
     }
     .link-text{
-        font-size: 25px;
+        font-size: 30px;
         color: #000000;
         text-decoration: none;
-        transition: color 0.5s;
+        transition: color 1s;
+    }
+    .contato-text{
+        font-size: 50px;
+        color: #000000;
+    }
+    .copyright{
+        font-size: 20px;
+        color: #000000;
     }
 }
