@@ -54,11 +54,6 @@
     .universidade-text{ 
         color: #000000;
     }
-    .campus-text{
-        color: #000000;
-        text-decoration: none;
-        transition: color 1s;
-    }
     .link-text{
         color: #000000;
         text-decoration: none;
@@ -78,17 +73,15 @@
         font-size: 40px;
         color: #000000;
     }
-    .campus-text{
-        font-size: 40px;
-        color: #000000;
-        text-decoration: none;
-        transition: color 1s;
-    }
     .link-text{
         font-size: 30px;
         color: #000000;
         text-decoration: none;
         transition: color 1s;
+        transition: 1s;
+        transition: ease-in-out;
+        transition-duration: 0.4s;
+        transform: scale(1,1);
     }
     .contato-text{
         font-size: 50px;
