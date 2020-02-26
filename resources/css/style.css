@@ -30,16 +30,7 @@
     transition: color 0.8s;
 }
 
-.link-text:hover, .campus-text:hover, .btn-folder:hover{
-    color: #00226b;
-}
 
-.link-text-transform:hover{
-    transition: 1s;
-    transition: ease-in-out;
-    transition-duration: 0.4s;
-    transform: scale(1.1,1.1);
-}
 
 @media screen and (max-width: 767px){
     .title-text{
@@ -60,6 +51,7 @@
         transition: color 1s;
     }
 }
+
 @media screen and (min-width: 768px){
     .title-text{
         font-size: 80px;
@@ -90,5 +82,14 @@
     .copyright{
         font-size: 20px;
         color: #000000;
+    }
+    .link-text-transform:hover{
+        transition: 1s;
+        transition: ease-in-out;
+        transition-duration: 0.4s;
+        transform: scale(1.1,1.1);
+    }
+    .link-text:hover, .campus-text:hover, .btn-folder:hover{
+        color: #00226b;
     }
 }
