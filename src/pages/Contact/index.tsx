@@ -28,16 +28,28 @@ const Contact: React.FC = () => {
         <Paper className={classes.paper}>
           <List>
             <ListItem button component="a" href="mailto:leonardojr410@gmail.com">
-              <ListItemIcon><MailOutlineIcon /></ListItemIcon>
-              <ListItemText>leonardojr410@gmail.com</ListItemText>
+              <ListItemIcon>
+                <MailOutlineIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography noWrap>leonardojr410@gmail.com</Typography>
+              </ListItemText>
             </ListItem>
             <ListItem button component="a" href="https://github.com/LeonardoJRibeiro" target="_blank" >
-              <ListItemIcon><GitHubIcon /></ListItemIcon>
-              <ListItemText>Github</ListItemText>
+              <ListItemIcon>
+                <GitHubIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography noWrap>Github</Typography>
+              </ListItemText>
             </ListItem>
             <ListItem button component="a" href="https://www.linkedin.com/in/leonardo-ribeiro-1671981b3/" target="_blank">
-              <ListItemIcon><LinkedInIcon /></ListItemIcon>
-              <ListItemText>LinkedIn</ListItemText>
+              <ListItemIcon>
+                <LinkedInIcon />
+              </ListItemIcon>
+              <ListItemText>
+                <Typography noWrap>LinkedIn</Typography>
+              </ListItemText>
             </ListItem>
           </List>
         </Paper>

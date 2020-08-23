@@ -37,7 +37,7 @@ Veja a sessão [deployment](https://facebook.github.io/create-react-app/docs/dep
 
 ## Tecnologias
 
-  * ReatJS
+  * ReactJS
   * MaterialUI
   * React-Scroll
   * TypeScript
