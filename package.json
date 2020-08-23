@@ -1,6 +1,6 @@
 {
-  "homepage": "http://LeonardoJRibeiro.github.io",
-  "name": "web",
+  "homepage": "http://LeonardoJRibeiro.github.io/",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
