@@ -1,14 +1,25 @@
 import React from 'react';
-import './App.css';
-import Main from './pages/Main';
 import Footer from './components/Footer';
+import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core';
+import NavBar from './components/NavBar';
+import Landing from './pages/Landing';
+import About from './pages/About';
+import Contents from './pages/Contents';
+import Contact from './pages/Contact';
 
 function App() {
+  let theme = createMuiTheme();
+  theme = responsiveFontSizes(theme);
+
   return (
-    <>
-      <Main/>
-      <Footer/>
-    </>
+    <ThemeProvider theme={theme}>
+      <NavBar  />
+      <Landing />
+      <About />
+      <Contents />
+      <Contact />
+      <Footer />
+    </ThemeProvider>
   );
 }
 

@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   },
   linkActive:{
     color: theme.palette.text.primary
-  }
+  },
 }))
 
 const NavBar: React.FC = () => {
