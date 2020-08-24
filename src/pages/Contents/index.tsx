@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Box } from '@material-ui/core';
+import { makeStyles, Box, Typography } from '@material-ui/core';
 import { Element } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
@@ -15,9 +15,10 @@ const useStyles = makeStyles((theme) => ({
 const Contents: React.FC = () => {
   const classes = useStyles();
   return (
-    <Element name="sobre" >
+    <Element name="contents" >
       <Box className={classes.root}>
-
+        <Typography variant="h2">Em construção.</Typography>
+        <Typography variant="h4">Em breve os projetos serão listados aqui.</Typography>
       </Box>
     </Element>
   );
