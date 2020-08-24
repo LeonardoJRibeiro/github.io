@@ -41,4 +41,4 @@ Veja a sessão [deployment](https://facebook.github.io/create-react-app/docs/dep
   * MaterialUI
   * React-Scroll
   * TypeScript
-  * MaterailUI Icons
+  * MaterialUI Icons
