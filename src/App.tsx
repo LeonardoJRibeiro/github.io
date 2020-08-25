@@ -4,7 +4,7 @@ import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui
 import NavBar from './components/NavBar';
 import Landing from './pages/Landing';
 import About from './pages/About';
-import Contents from './pages/Contents';
+import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
       <NavBar  />
       <Landing />
       <About />
-      <Contents />
+      <Projects />
       <Contact />
       <Footer />
     </ThemeProvider>

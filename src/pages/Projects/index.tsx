@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "column",
-    background: theme.palette.background.default
+    background: theme.palette.background.default,
+    paddingBottom: "64px",
   },
   cardContent: {
     height: "96px",
