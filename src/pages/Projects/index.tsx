@@ -25,7 +25,7 @@ const Contents: React.FC = () => {
 
 
   const listRepos = useCallback(async () => {
-    const reponse = await api.get("http://api.github.com/users/LeonardoJRibeiro/repos");
+    const reponse = await api.get("https://api.github.com/users/LeonardoJRibeiro/repos");
     if (reponse) {
       setRepos(reponse.data as any);
     }
