@@ -31,6 +31,11 @@ const NavBar: React.FC = () => {
                   </Link>
                 </Grid>
                 <Grid item>
+                  <Link to="projects" smooth="easeOutBounce" duration={500} spy activeClass={classes.linkActive} className={classes.link} >
+                    <Typography>Projetos</Typography>
+                  </Link>
+                </Grid>
+                <Grid item>
                   <Link to="contact" smooth="easeOutBounce" duration={500} spy activeClass={classes.linkActive}  className={classes.link}>
                     <Typography>Contato</Typography>
                   </Link>
