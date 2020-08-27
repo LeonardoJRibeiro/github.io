@@ -1,21 +1,24 @@
-import React from 'react';
-import { AppBar, Toolbar, Grid, Typography, makeStyles } from '@material-ui/core';
+import React, { useContext } from 'react';
+import { AppBar, Toolbar, Grid, Typography, makeStyles, Tooltip, IconButton } from '@material-ui/core';
 import { Link } from 'react-scroll';
+import ThemeContext from '../../contexts/ThemeContext';
+import InvertColorsIcon from '@material-ui/icons/InvertColors';
 
 const useStyles = makeStyles((theme) => ({
   link: {
     cursor: "pointer",
   },
-  linkActive:{
-    color: theme.palette.text.primary
+  linkActive: {
+    color: theme.palette.action.disabled
   },
 }))
 
 const NavBar: React.FC = () => {
   const classes = useStyles();
+  const { dark, changeTheme } = useContext(ThemeContext);
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" color="inherit">
         <Toolbar>
           <Grid container justify="space-between" alignItems="center">
             <Grid item>
@@ -36,11 +39,18 @@ const NavBar: React.FC = () => {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to="contact" smooth="easeOutBounce" duration={500} spy activeClass={classes.linkActive}  className={classes.link}>
+                  <Link to="contact" smooth="easeOutBounce" duration={500} spy activeClass={classes.linkActive} className={classes.link}>
                     <Typography>Contato</Typography>
                   </Link>
                 </Grid>
               </Grid>
+            </Grid>
+            <Grid item>
+              <Tooltip title={`Alterar tema para ${dark ? "claro" : "escuro"}`}>
+                <IconButton onClick={()=>changeTheme()}>
+                  <InvertColorsIcon/>
+                </IconButton>
+              </Tooltip>
             </Grid>
           </Grid>
         </Toolbar>
