@@ -21,7 +21,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     }
     else {
       setDark(true);
-      localStorage.setItem("dark", JSON.stringify(false));
+      localStorage.setItem("dark", JSON.stringify(true));
     }
   }
 
@@ -34,6 +34,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     const dark = localStorage.getItem("dark");
+    console.log(dark)
     if (dark) {
       setDark(JSON.parse(dark));
     }

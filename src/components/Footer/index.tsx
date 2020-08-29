@@ -1,10 +1,10 @@
 import React from 'react';
-import { Toolbar, Grid, Typography, ListItem, } from '@material-ui/core';
+import { Toolbar, Grid, Typography, ListItem, Container, } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Footer: React.FC = () => {
   return (
-    <Toolbar>
+    <Container maxWidth="md">
       <Grid container justify="center" alignItems="center" spacing={3}>
         <Grid item>
           <Typography>© 2020 - Leonardo Jardim Ribeiro</Typography>
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
           </ListItem>
         </Grid>
       </Grid>
-    </Toolbar>
+    </Container>
   );
 }
 
