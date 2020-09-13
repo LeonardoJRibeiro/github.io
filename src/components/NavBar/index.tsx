@@ -1,8 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { memo, useCallback, useContext, useMemo, useState } from 'react';
 import { AppBar, Toolbar, Grid, Typography, makeStyles, Tooltip, IconButton, Hidden, Menu, ListItem, ListItemIcon, ListItemText, List } from '@material-ui/core';
 import { Link } from 'react-scroll';
 import ThemeContext from '../../contexts/ThemeContext';
-import InvertColorsIcon from '@material-ui/icons/InvertColors';
+import BrightnessAutoIcon from '@material-ui/icons/BrightnessAuto';
+import BrightnessLowIcon from '@material-ui/icons/BrightnessLow';
+import BrightnessHighIcon from '@material-ui/icons/BrightnessHigh';
 import MenuIcon from '@material-ui/icons/Menu';
 import InfoIcon from '@material-ui/icons/Info';
 import CodeIcon from '@material-ui/icons/Code';
@@ -19,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar: React.FC = () => {
   const classes = useStyles();
-  const { dark, changeTheme } = useContext(ThemeContext);
+  const { theme, changeTheme, getNextTheme } = useContext(ThemeContext);
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -30,6 +32,54 @@ const NavBar: React.FC = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleTheme = useCallback(() => {
+    changeTheme(getNextTheme());
+  }, [changeTheme, getNextTheme]);
+
+  const getIconTheme = useCallback(() => {
+    switch (theme) {
+      case "auto": {
+        return <BrightnessAutoIcon />
+      }
+      case "dark": {
+        return <BrightnessLowIcon />
+      }
+      case "light": {
+        return <BrightnessHighIcon />
+      }
+    }
+  }, [theme]);
+
+  const getIconButtonTheme = useMemo(() => {
+    const nexTheme = getNextTheme();
+    let nexThemeName = "";
+    switch (nexTheme) {
+      case "auto": {
+        nexThemeName = "automático";
+        break;
+      }
+      case "dark": {
+        nexThemeName = "escuro";
+        break;
+      }
+      case "light": {
+        nexThemeName = "claro";
+        break;
+      }
+    }
+    return (
+      <Tooltip title={`Alterar tema para ${nexThemeName}`}>
+        <IconButton onClick={handleTheme}>
+          {
+            getIconTheme()
+          }
+        </IconButton>
+      </Tooltip>
+    )
+  }, [getIconTheme, getNextTheme, handleTheme]);
+
+
 
   return (
     <>
@@ -71,11 +121,7 @@ const NavBar: React.FC = () => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Tooltip title={`Alterar tema para ${dark ? "claro" : "escuro"}`}>
-                  <IconButton onClick={() => changeTheme()}>
-                    <InvertColorsIcon />
-                  </IconButton>
-                </Tooltip>
+                {getIconButtonTheme}
               </Grid>
             </Hidden>
           </Grid>
@@ -116,12 +162,9 @@ const NavBar: React.FC = () => {
                   </ListItemText>
                 </ListItem>
               </Link>
-              <ListItem button onClick={() => changeTheme()}>
+              <ListItem button onClick={handleTheme}>
                 <ListItemIcon>
-                  <Tooltip title={`Alterar tema para ${dark ? "claro" : "escuro"}`}>
-
-                    <InvertColorsIcon />
-                  </Tooltip>
+                  {getIconButtonTheme}
                 </ListItemIcon>
                 <ListItemText>
                   <Typography>Alterar tema</Typography>
@@ -135,4 +178,4 @@ const NavBar: React.FC = () => {
   );
 }
 
-export default NavBar;
+export default memo(NavBar);

@@ -1,28 +1,29 @@
-import React, { createContext, useState, useEffect } from "react";
-import { ThemeProvider as ThemeProviderMUI, createMuiTheme, responsiveFontSizes, Paper } from "@material-ui/core";
+import React, { createContext, useState, useEffect, useCallback } from "react";
+import { ThemeProvider as ThemeProviderMUI, createMuiTheme, responsiveFontSizes, Paper, useMediaQuery } from "@material-ui/core";
+
+interface Theme {
+  theme: "dark" | "light" | "auto";
+}
 
 interface ThemeContextValues {
-  changeTheme: () => void,
-  changeFontSize: (novoTamanho: number) => void,
-  dark: boolean,
-  fontSize: number,
+  changeTheme: (newTheme: Theme['theme']) => void;
+  changeFontSize: (novoTamanho: number) => void;
+  getNextTheme: () => Theme['theme'];
+  theme: Theme['theme'];
+  fontSize: number;
 }
 
 const ThemeContext = createContext<ThemeContextValues>({} as ThemeContextValues);
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [dark, setDark] = useState<boolean>(true);
+  const [theme, setTheme] = useState<Theme['theme']>("auto");
   const [fontSize, setFontSize] = useState<number>(14);
 
-  const changeTheme = () => {
-    if (dark) {
-      setDark(false);
-      localStorage.setItem("dark", JSON.stringify(false));
-    }
-    else {
-      setDark(true);
-      localStorage.setItem("dark", JSON.stringify(true));
-    }
+  const prefersDarkTheme = useMediaQuery("(prefers-color-scheme: dark)");
+
+  const changeTheme = (newTheme: Theme['theme']) => {
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
   }
 
   function changeFontSize(newSize: number) {
@@ -33,10 +34,9 @@ export const ThemeProvider: React.FC = ({ children }) => {
   }
 
   useEffect(() => {
-    const dark = localStorage.getItem("dark");
-    console.log(dark)
-    if (dark) {
-      setDark(JSON.parse(dark));
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      setTheme(theme as Theme['theme']);
     }
     const fontSize = localStorage.getItem("fontSize");
     if (fontSize) {
@@ -44,16 +44,43 @@ export const ThemeProvider: React.FC = ({ children }) => {
     }
   }, []);
 
-  const theme = createMuiTheme({
+  const getTheme = useCallback(() => {
+    switch (theme) {
+      case "auto": {
+        return prefersDarkTheme ? "dark" : "light";
+      }
+      case "dark": {
+        return "dark"
+      }
+      case "light": {
+        return "light"
+      }
+    }
+  }, [prefersDarkTheme, theme]);
+
+  const getNextTheme = useCallback((): Theme['theme'] => {
+    switch (theme) {
+      case "auto": {
+        return "dark"
+      }
+      case "dark": {
+        return "light"
+      }
+      case "light": {
+        return "auto"
+      }
+    }
+  }, [theme]);
+
+  const appTheme = createMuiTheme({
     palette: {
-      type: dark ? "dark" : "light",
+      type: getTheme(),
     },
-    
   });
 
   return (
-    <ThemeContext.Provider value={{ changeTheme, changeFontSize, dark, fontSize }}>
-      <ThemeProviderMUI theme={responsiveFontSizes(theme)}>
+    <ThemeContext.Provider value={{ changeTheme, changeFontSize, theme, fontSize, getNextTheme }}>
+      <ThemeProviderMUI theme={responsiveFontSizes(appTheme)}>
         <Paper square>
           {children}
         </Paper>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Toolbar, Grid, Typography, ListItem, Container, } from '@material-ui/core';
+import { Grid, Typography, ListItem, Container, } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
 const Footer: React.FC = () => {
