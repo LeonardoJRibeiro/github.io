@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     background: theme.palette.background.paper,
+    transition: 'all 0.3s',
   },
 }))
 

@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
     height: `calc(100vh)`,
     display: "flex",
     alignItems: "center",
-    background: theme.palette.background.default
+    background: theme.palette.background.default,
+    transition: 'all 0.3s',
   },
 }))
 const Landing: React.FC = () => {

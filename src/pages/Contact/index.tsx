@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     display: "flex",
     alignItems: "center",
-    background: theme.palette.background.paper
+    background: theme.palette.background.paper,
+    transition: 'all 0.3s',
   },
   paper: {
     width: '100%',
