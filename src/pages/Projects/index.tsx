@@ -13,10 +13,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flexDirection: "column",
     background: theme.palette.background.default,
+    transition: 'all 0.3s',
     paddingBottom: "64px",
   },
   cardContent: {
-    height: "96px",
+    minHeight: "96px",
   }
 }))
 
@@ -35,7 +36,9 @@ const Contents: React.FC = () => {
     listRepos();
   }, [listRepos]);
 
-  const blackList = ["tramoia",];
+  const blackList = process.env.REACT_APP_BLACKLIST_REPOS;
+
+  const parsedBlackList = blackList ? JSON.parse(blackList) : [];
 
   const classes = useStyles();
   return (
@@ -52,7 +55,7 @@ const Contents: React.FC = () => {
             <>
               {
                 repos.length ? repos.map((repo, index) => {
-                  if (blackList.includes(repo.name)) {
+                  if (parsedBlackList.includes(repo.name)) {
                     return null;
                   }
                   return (

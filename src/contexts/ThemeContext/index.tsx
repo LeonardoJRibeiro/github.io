@@ -76,6 +76,13 @@ export const ThemeProvider: React.FC = ({ children }) => {
     palette: {
       type: getTheme(),
     },
+    overrides:{
+      MuiPaper:{
+        root:{
+          transition: '0.3s'
+        }
+      }
+    }
   });
 
   return (
