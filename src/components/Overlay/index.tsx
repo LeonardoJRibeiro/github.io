@@ -1,4 +1,4 @@
-import { createStyles, makeStyles } from '@material-ui/core'
+import { createStyles, makeStyles, Paper } from '@material-ui/core'
 import React from 'react'
 interface OverlayProps {
   children: React.ReactNode
@@ -7,7 +7,8 @@ interface OverlayProps {
 const useStyles = makeStyles((theme) => createStyles({
   overlay: {
     height: '800vh',
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.paper,
+    color: theme.palette.text.primary,
   }
 }));
 

@@ -13,8 +13,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      <NavBar />
       <Overlay>
+        <NavBar />
         <Sticky>
           <Landing />
         </Sticky>
