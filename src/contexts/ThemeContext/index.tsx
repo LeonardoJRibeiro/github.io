@@ -76,9 +76,9 @@ export const ThemeProvider: React.FC = ({ children }) => {
     palette: {
       type: getTheme(),
     },
-    overrides:{
-      MuiPaper:{
-        root:{
+    overrides: {
+      MuiPaper: {
+        root: {
           transition: '0.3s'
         }
       }
@@ -88,9 +88,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
   return (
     <ThemeContext.Provider value={{ changeTheme, changeFontSize, theme, fontSize, getNextTheme }}>
       <ThemeProviderMUI theme={responsiveFontSizes(appTheme)}>
-        <Paper square>
-          {children}
-        </Paper>
+        {children}
       </ThemeProviderMUI>
     </ThemeContext.Provider>
   )

@@ -16,6 +16,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-scroll": "^1.8.0",
     "axios": "^0.20.0",
+    "framer-motion": "^4.1.17",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
