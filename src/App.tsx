@@ -1,29 +1,31 @@
 import React from 'react';
-import Footer from './components/Footer';
-import Overlay from './components/Overlay';
-import Sticky from './components/Sticky';
-import NavBar from './components/NavBar';
-import Landing from './pages/Landing';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import { ThemeProvider } from './contexts/ThemeContext'
-
+import { Wrapper } from "./contexts/WrapperContext";
+import Section from './components/Section';
+import Section01 from './sections/Section01';
 function App() {
 
   return (
-    <ThemeProvider>
-      <Overlay>
-        <NavBar />
-        <Sticky>
-          <Landing />
-        </Sticky>
-        <Sticky>
-          <About />
-        </Sticky>
-      </Overlay>
-      <Footer />
-    </ThemeProvider>
+    <Wrapper>
+      <div>
+        <Section name='a' content={(scroll) => <Section01 scrollYProgress={scroll} />} />
+        <Section name='a' content={(v) =>
+          <div></div>
+        } />
+
+        <Section name='a' content={(v) =>
+          <div></div>
+        } />
+        <Section name='a' content={(v) =>
+          <div></div>
+        } />
+        <Section name='a' content={(v) =>
+          <div></div>
+        } />
+        <Section name='a' content={(v) =>
+          <div></div>
+        } />
+      </div>
+    </Wrapper>
   );
 }
 
