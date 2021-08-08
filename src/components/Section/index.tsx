@@ -5,19 +5,18 @@ import useSectionScroll from '../../hooks/useSectionScroll';
 import { Container, } from './styles';
 
 interface Props {
-  name: string;
   content: (scroolY: MotionValue) => React.ReactNode;
 }
 
-export default function Section({ name, content }: Props): JSX.Element {
+export default function Section({ content }: Props): JSX.Element {
   const ref = useRef<HTMLDivElement>({} as HTMLDivElement);
   const scrollProgress = useSectionScroll(ref);
 
   const { registerSection } = useContext(WrapperContext);
 
   useEffect(() => {
-    registerSection({ name: name, content: content(scrollProgress) });
-  }, [content, name, registerSection, scrollProgress]);
+    registerSection({ content: content(scrollProgress) });
+  }, [content,  registerSection, scrollProgress]);
 
   return (
     <Container ref={ref} />

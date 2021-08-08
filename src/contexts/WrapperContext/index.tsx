@@ -2,7 +2,6 @@ import React, { useCallback, useRef, useState } from "react";
 import { Container, Content, Sticky } from './styles';
 
 interface Section {
-  name: string;
   content: React.ReactNode;
 }
 
